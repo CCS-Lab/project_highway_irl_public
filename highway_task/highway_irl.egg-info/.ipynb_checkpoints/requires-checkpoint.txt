@@ -1,0 +1,6 @@
+numpy
+matplotlib
+gym
+gym-minigrid
+pygame
+highway-env
