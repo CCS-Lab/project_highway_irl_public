@@ -199,7 +199,7 @@ def AIRL_test_function_gym(args, network_policy_values, network_discrim_values, 
 
             if episode_length >= EPISODE_LENGTH:
                 next_state,lane_speed = transform_obs(next_obs,lane_speed,args.discretize,max_speed)
-                last_value = np.asscalar(Policy_a.get_value([next_state]))
+                last_value = Policy_a.get_value([next_state]).item() #np.asscalar(Policy_a.get_value([next_state]))
                 sampler.sampler_total(last_value)
                 env.reset()
                 if discrete_env_check:
